@@ -15,6 +15,19 @@
             <li class="nav-item">
               <%= link_to "New Article", new_article_path, class: "nav-link", id: "logo" %>
             </li>
+           
+            </li>
+            <%if user_signed_in?%>
+              <li class="nav-item">
+                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link", id: "logo", method: :delete %>
+              </li>
+            <%else%>
+               <li class="nav-item">
+                <%= link_to "Log in", new_user_session_path, class: "nav-link", id: "logo" %>
+               </li>
+               <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link", id: "logo" %>
+            <%end%>
           </ul>
         </div>
       </div>
